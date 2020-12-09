@@ -208,9 +208,8 @@ public final class DocumentPageServlet extends HttpServlet
 
                     BufferedImage image;
                     String base64;
-                    InputStream imageInputStream = new ByteArrayInputStream(baos.toByteArray())
-                       
-                        base64 = Base64.getEncoder().encodeToString(baos.toByteArray());
+                    InputStream imageInputStream = new ByteArrayInputStream(baos.toByteArray());
+                      
 
                      
 
