@@ -225,8 +225,7 @@ public final class DocumentPageServlet extends HttpServlet
         }
         finally
         {
-            IOUtils.closeQuietly( inputStream );
-            IOUtils.closeQuietly( outputStream );
+         
         }
     }
 
