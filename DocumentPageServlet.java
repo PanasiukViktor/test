@@ -208,7 +208,7 @@ public final class DocumentPageServlet extends HttpServlet
 
                     BufferedImage image;
                     String base64;
-                    try (InputStream imageInputStream = new ByteArrayInputStream(baos.toByteArray())) {
+                    InputStream imageInputStream = new ByteArrayInputStream(baos.toByteArray())
                         image = ImageIO.read(imageInputStream);
                         base64 = Base64.getEncoder().encodeToString(baos.toByteArray());
 
@@ -216,9 +216,7 @@ public final class DocumentPageServlet extends HttpServlet
                         String height = String.valueOf(image.getHeight());
 
                         outputStream.write((base64.concat(":").concat(width).concat(":").concat(height)).getBytes(StandardCharsets.UTF_8));
-                    } catch (IOException e) {
-                        response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error converting file: " + e.getMessage());
-                    }
+                  
 
             } 
         }
