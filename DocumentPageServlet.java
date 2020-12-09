@@ -203,19 +203,18 @@ public final class DocumentPageServlet extends HttpServlet
             if (getImageReturnType(request) == ImageReturnType.BASE64) {
                 response.setContentType(CONTENT_TYPE_BASE64_HEADER);
 
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     IOUtils.copy(inputStream, baos);
 
                     BufferedImage image;
                     String base64;
                     InputStream imageInputStream = new ByteArrayInputStream(baos.toByteArray())
-                        image = ImageIO.read(imageInputStream);
+                       
                         base64 = Base64.getEncoder().encodeToString(baos.toByteArray());
 
-                        String width = String.valueOf(image.getWidth());
-                        String height = String.valueOf(image.getHeight());
+                     
 
-                        outputStream.write((base64.concat(":").concat(width).concat(":").concat(height)).getBytes(StandardCharsets.UTF_8));
+                        outputStream.write((base64).getBytes(StandardCharsets.UTF_8));
                   
 
             } 
