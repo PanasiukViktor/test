@@ -207,7 +207,7 @@ public final class DocumentPageServlet extends HttpServlet
                     IOUtils.copy(inputStream, baos);
 
                     BufferedImage image;
-                    String base64;
+ 
                     InputStream imageInputStream = new ByteArrayInputStream(baos.toByteArray());
                       
 
